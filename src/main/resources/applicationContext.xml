@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        import :
+            在Spring中，可以把配置文件分散到各个模块中（XXX-dao.xml, XXX-service.xml, XXX-mvc.xml），
+            然后通过import元素将这些元素统一配置在一个总的配置文件中。
+            如：
+               applicationContext.xml
+                        spring-dao.xml
+                        spring-service.xml
+                        spring-mvc.xml
+        classpath: 表示只会在classes文件夹中找
+        classpath*: 不经会在 classes 文件夹中找，而且还会在 jar 中查找文件
+    -->
+    <import resource="classpath:spring-dao.xml"/>
+    <import resource="classpath:spring-service.xml"/>
+    <import resource="classpath:spring-mvc.xml"/>
+</beans>
+
+<!--
+import :
+    在Spring中，可以把配置文件分散到各个模块中（XXX-dao.xml, XXX-service.xml, XXX-mvc.xml），
+    然后通过import元素将这些元素统一配置在一个总的配置文件中。
+    如：
+       applicationContext.xml
+                spring-dao.xml
+                spring-service.xml
+                spring-mvc.xml
+classpath: 表示只会在classes文件夹中找
+classpath*: 不经会在 classes 文件夹中找，而且还会在 jar 中查找文件
+    tip: classes 文件夹是项目运行时候的target文件夹中
+            target
+                classes
+                    com
+                        alvin
+                            controller
+                            service
+                            dao
+                            pojo
+                        spring-dao.xml
+                        spring-service.xml
+                        ...
+                        spring-mvc
+                 generated-sources
+                    ...
+-->

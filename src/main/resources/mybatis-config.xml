@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- Mybatis整合 第 9 步 :  配置日志(增加功能) -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!-- Mybatis整合 第 0 步 : 构建相关数据库 -->
+
+    <!-- Mybatis整合 第 1 步 : 配置DB信息 db.properties -->
+
+    <!-- Mybatis整合 第 2 步 : 交给Spring去做-->
+    <typeAliases>
+        <package name="com.alvin.pojo"/>
+    </typeAliases>
+
+    <!-- Mybatis整合 第 3 步 : 构建pojo -->
+    <!-- Mybatis整合 第 4 步 : 构建 mapper.java 和 mapper.xml -->
+    <!-- Mybatis整合 第 5 步 : 绑定mapper -->
+    <mappers>
+        <mapper class="com.alvin.dao.BookMapper"/>
+    </mappers>
+
+    <!-- Mybatis整合 第 6 步 : 构建 mapper对应的Service服务层... -->
+    <!-- Mybatis整合 第 7 步 : 配置 spring-dao.xml -->
+
+    <!--
+        db.properties
+        pojo的配置
+        pojo
+        dao
+            mapper.java
+            mapper.xml
+        service
+    -->
+
+</configuration>
+
+<!--
+ Mybatis 的配置文件
+
+Tip：
+ 为什么Mybatis 不能使用 @Conponent ... 和 @Autowired注解配置
+ 由于 MyBatis 是第三方库：
+    只能使用 JavaConfig 和 xml配置
+-->
